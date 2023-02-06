@@ -1,0 +1,22 @@
+# Products
+> Created by Yacob Kazal
+Developed on Xcode 14.2
+Supports iOS 14.0
+Clone, and you can run the application right away
+
+If you want to run it on a real device, then you need to select team and perhaps change the bundle ID
+
+This App is list of Products using Swift and SwiftUI for UI.
+
+## UI
+- Screens:
+ 1- Product List page
+ 2- Product Details Page
+ 3- Favourites Page
+
+The UI is very simple as it's required. List and each cell has the image, name, price, and button to add to the car of the product
+
+
+## Design
+- The App is simple and hasn't many flows, so MVVM would do great.
+
