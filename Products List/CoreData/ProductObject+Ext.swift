@@ -18,5 +18,4 @@ extension ProductObject{
     static func findObjects(moc: NSManagedObjectContext) -> [ProductObject] {
         return (try? moc.fetch(ProductObject.fetchRequest())) ?? []
     }
-
 }

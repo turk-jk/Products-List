@@ -58,12 +58,12 @@ struct ProductCellView: View{
                         .shadow(color: .black, radius: 1, x: -1, y: 1))
             }
             
-                Button {
-                    product.isFavourite.toggle()
-                    try? product.managedObjectContext?.save()
-                } label: {
-                    Image(name: product.isFavourite ? .heartFill : .heart)
-                }.buttonStyle(PlainButtonStyle())
+            Button {
+                product.isFavourite.toggle()
+                try? product.managedObjectContext?.save()
+            } label: {
+                Image(name: product.isFavourite ? .heartFill : .heart)
+            }.buttonStyle(PlainButtonStyle())
                 .padding([.leading], 8)
             
         }

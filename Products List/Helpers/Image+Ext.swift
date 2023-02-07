@@ -12,7 +12,6 @@ enum ImageName: String {
     case heartFill = "heart.fill"
     case listDash = "list.dash"
     case cart = "cart"
-
 }
 
 extension Image{

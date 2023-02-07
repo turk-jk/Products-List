@@ -25,7 +25,6 @@ struct CartView: View {
                     .buttonStyle(PlainButtonStyle())
                 Image(name: .cart).flipRotate(180)
                     .font(.system(size: 40)).overlay(BadgeView())
-
             }
         }
     }

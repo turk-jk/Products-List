@@ -39,6 +39,7 @@ final class ProductsListViewModel: ObservableObject {
                     productObject.title = product.title
                     productObject.imageURL = product.imageURL
                     productObject.price = product.price.first?.value ?? 0.0
+                    productObject.ratingCount = product.ratingCount
                 }
                 do {
                     try self.moc.save()

@@ -14,7 +14,6 @@ struct FavouritesView: View{
         let favourites = productObjects.filter{$0.isFavourite}
         if favourites.count > 0 {
             VStack{
-                
                 List(favourites, id: \.self) { product in
                     ProductCellView(product)
                         .onTapGesture {
@@ -23,7 +22,7 @@ struct FavouritesView: View{
                         }
                 }
                 .sheet(isPresented: $productState.showProduct) {
-                    ProductDetailsView(product: productState.product)
+                    ProductDetailsView(productState.product)
                 }
                 if productObjects.filter({$0.number > 0}).count > 0{
                     CartView().padding([.bottom], 6)

@@ -10,7 +10,7 @@ import Foundation
 
 final class APIService {
     private var session: URLSessionProtocol
-
+    
     init(withSession session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
@@ -51,7 +51,6 @@ final class APIService {
                     completion(.failure(.unhandledCode("statusCode: \(statusCode)")))
                 }
             }
-
             dataTask.resume()
         }.eraseToAnyPublisher()
     }

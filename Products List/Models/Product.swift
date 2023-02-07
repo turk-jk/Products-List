@@ -15,6 +15,7 @@ struct Product: CodableEquatable{
     let id: String
     let imageURL: String
     let price: [Price]
+    let ratingCount: Double
 }
 
 struct Price: CodableEquatable{

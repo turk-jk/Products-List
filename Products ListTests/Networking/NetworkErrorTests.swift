@@ -8,7 +8,7 @@ import XCTest
 
 @testable import Products_List
 class NetworkErrorTests: XCTestCase {
-
+    
     func testNetworkErrorcases() {
         XCTAssertEqual(NetworkError.noData, NetworkError.noData)
         XCTAssertEqual(NetworkError.badData, NetworkError.badData)
@@ -17,5 +17,5 @@ class NetworkErrorTests: XCTestCase {
         
         XCTAssertNotEqual(NetworkError.noData, NetworkError.badData)
     }
-
+    
 }

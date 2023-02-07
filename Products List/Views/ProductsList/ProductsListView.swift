@@ -33,7 +33,7 @@ struct ProductsListView: View{
                         }
                 }
                 .sheet(isPresented: $productState.showProduct) {
-                    ProductDetailsView(product: productState.product)
+                    ProductDetailsView(productState.product)
                 }
                 if productObjects.filter({$0.number > 0}).count > 0{
                     CartView().padding([.bottom], 6)
