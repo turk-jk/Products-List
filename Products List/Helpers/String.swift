@@ -9,4 +9,5 @@ import Foundation
 enum S {
     static let Products = "Products"
     static let Favorites = "Favorites"
+    static let ViewCart = "View Cart"
 }

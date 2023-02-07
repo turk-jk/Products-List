@@ -16,7 +16,7 @@ final class ProductsListViewModel: ObservableObject {
     private var cancelables = Set<AnyCancellable>()
     
     init(withSession session: URLSessionProtocol = URLSession.shared,
-         moc: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+         moc: NSManagedObjectContext) {
         self.session = session
         self.moc = moc
     }

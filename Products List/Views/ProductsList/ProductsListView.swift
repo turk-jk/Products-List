@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductsListView: View{
-    @ObservedObject var viewModel = ProductsListViewModel()
+    @ObservedObject var viewModel: ProductsListViewModel
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var productObjects: FetchedResults<ProductObject>
     @ObservedObject var productState = ProductState()
@@ -23,15 +23,21 @@ struct ProductsListView: View{
         case .loading:
             loaderView()
         case .success:
-            List(productObjects, id: \.self) { product in
-                Text("\(product.title ?? "")")
-                    .onTapGesture {
-                        productState.product = product
-                        productState.showProduct = true
-                    }
-            }
-            .sheet(isPresented: $productState.showProduct) {
-                ProductDetailsView(product: productState.product)
+            VStack{
+                
+                List(productObjects, id: \.self) { product in
+                    ProductCellView(product)
+                        .onTapGesture {
+                            productState.product = product
+                            productState.showProduct = true
+                        }
+                }
+                .sheet(isPresented: $productState.showProduct) {
+                    ProductDetailsView(product: productState.product)
+                }
+                if productObjects.filter({$0.number > 0}).count > 0{
+                    CartView().padding([.bottom], 6)
+                }
             }
                 
         case .failure(let error):

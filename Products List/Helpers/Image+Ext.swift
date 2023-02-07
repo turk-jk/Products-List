@@ -9,7 +9,9 @@ import SwiftUI
 
 enum ImageName: String {
     case heart = "heart"
+    case heartFill = "heart.fill"
     case listDash = "list.dash"
+    case cart = "cart"
 
 }
 
