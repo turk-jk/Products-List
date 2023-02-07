@@ -8,5 +8,5 @@ import Foundation
 
 final class ProductState : ObservableObject {
     @Published var showProduct = false
-//    var Product:
+    var product: ProductObject?
 }

@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct ProductDetailsView: View{
+    let product: ProductObject?
     var body: some View {
-        Text("ProductDetailsView")
+        Text("\(product?.title ?? "none")")
     }
 }

@@ -9,14 +9,16 @@ import SwiftUI
 
 @main
 struct Products_ListApp: App {
-    let persistenceController = PersistenceController.shared
+    @ObservedObject private var persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             TabView{
-                ProductsListView()
+                ProductsListView(viewModel: ProductsListViewModel(moc: persistenceController.container.viewContext))
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabViewWithNavigationTitle(with: S.Products, systemImage: .listDash)
                 FavouritesView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabViewWithNavigationTitle(with: S.Favorites, systemImage: .heart)
             }
         }
